@@ -19,13 +19,16 @@
           rustVersion = "1.64.0";
           packageFun = import ./Cargo.nix;
         };
-      in {
+      in
+      {
         packages = {
-          keediff = (rustPkgs.workspace.keepass-diff {}).bin;
+          keediff = (rustPkgs.workspace.keepass-diff { }).bin;
         };
 
+        formatter = pkgs.nixpkgs-fmt;
+
         devShells = {
-          default = (rustPkgs.workspaceShell {});
+          default = (rustPkgs.workspaceShell { });
         };
       }
     );
