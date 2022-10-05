@@ -28,7 +28,9 @@
         formatter = pkgs.nixpkgs-fmt;
 
         devShells = {
-          default = (rustPkgs.workspaceShell { });
+          default = (rustPkgs.workspaceShell {
+           packages = with pkgs; [ rust-analyzer clippy ];
+          });
         };
       }
     );
