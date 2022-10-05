@@ -23,6 +23,10 @@
         packages = {
           keediff = (rustPkgs.workspace.keepass-diff {}).bin;
         };
+
+        devShells = {
+          default = (rustPkgs.workspaceShell {});
+        };
       }
     );
 }
